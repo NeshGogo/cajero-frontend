@@ -12,6 +12,7 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
 import { ClientTableComponent } from './components/client-table/client-table.component';
 import { AccountFormComponent } from './components/account-form/account-form.component';
 import { AccountTableComponent } from './components/account-table/account-table.component';
+import { TransactionTableComponent } from './components/transaction-table/transaction-table.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AccountTableComponent } from './components/account-table/account-table.
     ClientFormComponent,
     ClientTableComponent,
     AccountFormComponent,
-    AccountTableComponent
+    AccountTableComponent,
+    TransactionTableComponent
   ],
   imports: [
     BrowserModule,
