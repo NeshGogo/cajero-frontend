@@ -23,13 +23,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let transaction of transactions$ | async;  index as i">
-        <td>{{transaction.AccountOrigen}}</td>
-        <td>{{transaction.AccountDestination}}</td>
-        <td>{{transaction.TransactionDestination}}</td>
-        <td>{{transaction.TransactionType}}</td>
-        <td>{{transaction.Amount}}</td>
-        <td>{{transaction.CurrentBalance}}</td>
+      <tr *ngFor="let transaction of transactions$ | async">
+        <td>{{transaction.accountOrigen}}</td>
+        <td>{{transaction.accountDestination}}</td>
+        <td>{{getTransactionType(transaction.transactionDestination)}}</td>
+        <td>{{getTransactionOperationType(transaction.transactionType)}}</td>
+        <td>{{transaction.amount}}</td>
+        <td>{{transaction.currentBalance}}</td>
       </tr>
     </tbody>
   </table>

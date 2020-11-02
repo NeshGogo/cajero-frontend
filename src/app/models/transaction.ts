@@ -1,19 +1,19 @@
 export interface Transaction {
-  Id: number;
-  AccountOrigen: string;
-  AccountDestination: string;
-  Amount: number;
-  TransactionType: TransactionTypeEnum;
-  TransactionDestination: TransactionDestionationEnum;
-  CurrentBalance: number;
+  id: number;
+  accountOrigen: string;
+  accountDestination: string;
+  amount: number;
+  transactionType: TransactionTypeEnum;
+  transactionDestination: TransactionDestionationEnum;
+  currentBalance: number;
 }
 
 export enum TransactionTypeEnum {
-  Withdraw = 1,
-  Deposit = 2,
+  withdraw = 1,
+  deposit = 2,
 }
 
 export enum TransactionDestionationEnum {
-  Own = 1,
-  Other = 2,
+  own = 1,
+  other = 2,
 }

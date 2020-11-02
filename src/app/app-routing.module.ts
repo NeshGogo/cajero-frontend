@@ -5,6 +5,7 @@ import { AccountTableComponent } from './components/account-table/account-table.
 import { ClientFormComponent } from './components/client-form/client-form.component';
 import { ClientTableComponent } from './components/client-table/client-table.component';
 import { TransactionTableComponent } from './components/transaction-table/transaction-table.component';
+import { TransactionFormComponent } from './components/transaction-form/transaction-form.component';
 import { LayoutComponent } from './layout/layout.component';
 const routes: Routes = [
   {
@@ -33,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: 'transactions/register',
-    component: AccountFormComponent
+    component: TransactionFormComponent
   },
 ];
 

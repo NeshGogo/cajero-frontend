@@ -1,0 +1,80 @@
+<section>
+  <div>
+    <h3>Crear cuenta a cliente</h3>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Cuenta Origen</label>
+      <select
+        class="form-control"
+        [(ngModel)]="transaction.accountOrigen"
+        name="accountOrigen"
+      >
+        <option *ngFor="let account of accounts" [value]="account.accountNo">
+          {{ account.accountNo.toLocaleUpperCase() }} -
+          {{ account.client.name.toLocaleUpperCase() }}
+          {{ account.client.lastName.toLocaleUpperCase() }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Tipo de Transaccion</label>
+      <select
+        class="form-control"
+        [(ngModel)]="transaction.transactionDestination"
+        (change)="onChangeTransactionType()"
+        name="transactionDestination"
+      >
+        <option
+          *ngFor="let transactionType of transactionTypes"
+          [value]="transactionType.id"
+        >
+          {{ transactionType.value.toLocaleUpperCase() }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group" *ngIf="getShowDestinationAccount">
+      <label for="exampleInputPassword1">Cuenta Destiono</label>
+      <select
+        class="form-control"
+        [(ngModel)]="transaction.accountDestination"
+        name="accountDestination"
+      >
+        <option *ngFor="let account of accounts" [value]="account.accountNo">
+          {{ account.accountNo.toLocaleUpperCase() }} -
+          {{ account.client.name.toLocaleUpperCase() }}
+          {{ account.client.lastName.toLocaleUpperCase() }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group" *ngIf="!getShowDestinationAccount">
+      <label for="exampleInputPassword1">Tipo de Operacion</label>
+      <select
+        class="form-control"
+        [(ngModel)]="transaction.transactionType"
+        name="transactionType"
+      >
+        <option
+          *ngFor="let transacctionOperation of transactionOperations"
+          [value]="transacctionOperation.id"
+        >
+          {{ transacctionOperation.value.toLocaleUpperCase() }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Cantidad</label>
+      <input
+        type="number"
+        class="form-control"
+        [(ngModel)]="transaction.amount"
+        name="amount"
+      />
+    </div>
+    <button type="button" class="btn btn-primary" (click)="send()">
+      Enviar
+    </button>
+  </form>
+</section>
