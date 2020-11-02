@@ -1,1 +1,36 @@
-<p>transaction-table works!</p>
+<section>
+  <div class="mt-5 mb-5 text-center">
+    <h3>Listado de Transacciones.</h3>
+  </div>
+  <div class="mb-3">
+    <input
+      type="text"
+      class="w-50 form-control"
+      (input)="filter()"
+      aria-describedby="emailHelp"
+      placeholder="Buscar.."
+      [(ngModel)]="searchValue">
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Cuenta Origen</th>
+        <th scope="col">Cuenta Destino</th>
+        <th scope="col">Tipo de Transaccion</th>
+        <th scope="col">Tipo de Operacion</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Balance Actual</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions$ | async;  index as i">
+        <td>{{transaction.AccountOrigen}}</td>
+        <td>{{transaction.AccountDestination}}</td>
+        <td>{{transaction.TransactionDestination}}</td>
+        <td>{{transaction.TransactionType}}</td>
+        <td>{{transaction.Amount}}</td>
+        <td>{{transaction.CurrentBalance}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

@@ -12,6 +12,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarClientDropdown">
           <a class="dropdown-item" href="clients">Clientes</a>
+          <div class="dropdown-divider"></div>
           <a class="dropdown-item" routerLink="clients/register">Registrar</a>
         </div>
       </li>
@@ -21,30 +22,20 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarAccountDropdown">
           <a class="dropdown-item" href="accounts">Cuentas Bancarias</a>
+          <div class="dropdown-divider"></div>
           <a class="dropdown-item" routerLink="accounts/register">Registra Cuenta Bancaria</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+        <a class="nav-link dropdown-toggle" href="#" id="navbarTransactionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Transacciones
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-menu" aria-labelledby="navbarTrsansactionDropdown">
+          <a class="dropdown-item" routerLink="transactions">Transacciones</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item"routerLink="transactions/register">Realizar Transaccion</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>
