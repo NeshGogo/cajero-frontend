@@ -1,0 +1,24 @@
+<section>
+  <div>
+    <h3>Crear cuenta a cliente</h3>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Alias</label>
+      <input type="text" class="form-control" [(ngModel)]="account.alias" name="alias">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Balance</label>
+      <input type="text" class="form-control" [(ngModel)]="account.balance" name="balance">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Cliente</label>
+      <select class="form-control" [(ngModel)]="account.clientId"  name="clientId">
+        <option *ngFor="let client of clients" [value]="client.id">
+          {{client.name.toLocaleUpperCase()}} {{client.lastName.toLocaleUpperCase()}}
+        </option>
+      </select>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="send()">Enviar</button>
+  </form>
+</section>

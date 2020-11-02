@@ -1,0 +1,22 @@
+
+
+<section>
+  <div class="mt-5 mb-5 text-center">
+    <h3>Registrar Cliente</h3>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nombre</label>
+      <input type="text" class="form-control" [(ngModel)]="client.name" aria-describedby="emailHelp" name="name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Apellido</label>
+      <input type="text" class="form-control" [(ngModel)]="client.lastName" name="lastName">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Cedula</label>
+      <input type="text" class="form-control"  [(ngModel)]="client.cedula" name="cedula">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="sendClient()">Enviar</button>
+  </form>
+</section>

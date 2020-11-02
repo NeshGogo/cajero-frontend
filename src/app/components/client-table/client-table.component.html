@@ -1,0 +1,30 @@
+<section>
+  <div class="mt-5 mb-5 text-center">
+    <h3>Listado de clientes.</h3>
+  </div>
+  <div class="mb-3">
+    <input
+      type="text"
+      class="w-50 form-control"
+      (input)="filter()"
+      aria-describedby="emailHelp"
+      placeholder="Buscar.."
+      [(ngModel)]="searchValue">
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Cedula</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients$ | async;  index as i">
+        <td>{{client.cedula}}</td>
+        <td>{{client.name}}</td>
+        <td>{{client.lastName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

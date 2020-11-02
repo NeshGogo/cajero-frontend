@@ -1,0 +1,33 @@
+<section>
+  <div class="mt-5 mb-5 text-center">
+    <h3>Listado de Cuentas.</h3>
+  </div>
+  <div class="mb-3">
+    <input
+      type="text"
+      class="w-50 form-control"
+      (input)="filter()"
+      aria-describedby="emailHelp"
+      placeholder="Buscar.."
+      [(ngModel)]="searchValue">
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Alias</th>
+        <th scope="col">Numero de cuenta</th>
+        <th scope="col">Balance</th>
+        <th scope="col">Propietario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let account of accounts$ | async;  index as i">
+        <td>{{account.alias}}</td>
+        <td>{{account.accountNo}}</td>
+        <td>{{account.balance}}</td>
+        <td>{{account.client.name}} {{account.client.lastName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
