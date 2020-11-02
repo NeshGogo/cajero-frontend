@@ -6,36 +6,57 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
 import { ClientTableComponent } from './components/client-table/client-table.component';
 import { TransactionTableComponent } from './components/transaction-table/transaction-table.component';
 import { TransactionFormComponent } from './components/transaction-form/transaction-form.component';
-import { LayoutComponent } from './layout/layout.component';
+import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   {
-    path: './',
-    component: LayoutComponent
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'clients',
-    component: ClientTableComponent
-  },
-  {
-    path: 'clients/register',
-    component: ClientFormComponent
+    children: [
+      {
+        path: '',
+        component: ClientTableComponent
+      },
+      {
+        path: 'register',
+        component: ClientFormComponent
+      }
+    ]
   },
   {
     path: 'accounts',
-    component: AccountTableComponent
-  },
-  {
-    path: 'accounts/register',
-    component: AccountFormComponent
+    children: [
+      {
+        path: '',
+        component: AccountTableComponent
+      },
+      {
+        path: 'register',
+        component: AccountFormComponent
+      },
+    ]
   },
   {
     path: 'transactions',
-    component: TransactionTableComponent
+    children: [
+      {
+        path: '',
+        component: TransactionTableComponent
+      },
+      {
+        path: 'register',
+        component: TransactionFormComponent
+      },
+    ]
   },
-  {
-    path: 'transactions/register',
-    component: TransactionFormComponent
-  },
+  
 ];
 
 @NgModule({

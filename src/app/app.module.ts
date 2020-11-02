@@ -14,6 +14,7 @@ import { AccountFormComponent } from './components/account-form/account-form.com
 import { AccountTableComponent } from './components/account-table/account-table.component';
 import { TransactionTableComponent } from './components/transaction-table/transaction-table.component';
 import { TransactionFormComponent } from './components/transaction-form/transaction-form.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TransactionFormComponent } from './components/transaction-form/transact
     AccountTableComponent,
     TransactionTableComponent,
     TransactionFormComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
